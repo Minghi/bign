@@ -1,11 +1,16 @@
-void multiplication(CONST BigNum* num1, CONST BigNum* num2, CONST BigNum* nRes)
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "bignum.h"
+
+void multiplication(CONST BigNum* num1, CONST BigNum* num2, BigNum* nRes)
 {
     BigNum m1 = *num1, m2 = *num2;
     BigNum sum = {0};
     int i, j;
     InitBigNum(nRes);
-    MoveFloatPoint(&m1, m1, floatbits);
-    MoveFloatPoint(&m2, m2, floatbits);
+    MoveFloatPoint(&m1, m1.floatbits);
+    MoveFloatPoint(&m2, m2.floatbits);
     StartCount();
     for(i = 0; i < m2.intbits; i++)
     {

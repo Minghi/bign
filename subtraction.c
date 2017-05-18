@@ -1,4 +1,9 @@
-void subtraction(CONST BigNum* num1, CONST BigNum* num2, CONST BigNum* nRes)
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "bignum.h"
+
+void subtraction(CONST BigNum* num1, CONST BigNum* num2, BigNum* nRes)
 {
     InitBigNum(nRes);
     if(num1->sign ^ num2->sign)
@@ -17,6 +22,7 @@ void subtraction(CONST BigNum* num1, CONST BigNum* num2, CONST BigNum* nRes)
             EndCount()
             return;
         }
+        swapflag = num1->sign == 0 ? cmp == -1 : cmp == 1;
         if(swapflag)
         {
             CONST BigNum* n = num1;

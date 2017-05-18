@@ -8,7 +8,7 @@
 
 typedef char CHARARR[1000];
 
-#ifdef CONST
+#ifndef CONST
     #ifdef __cplusplus
         #define CONST const
     #else
@@ -47,17 +47,17 @@ void MoveFloatPoint(BigNum* Nm, int deta);
 
 void MakeInfinite(BigNum* Nm);
 
-char *Result(CONST char *val1, CONST char *val2, PENCALC pfnCalc);
+char *Result(CONST char *val1, CONST char *val2, PFNCALC pfnCalc);
 
 int compare(CONST BigNum* num1, CONST BigNum* num2);
 
 int IsZero(CONST BigNum* Nm);
 
-void addition(CONST BigNum* num1, CONST BigNum* num2, CONST BigNum* nRes);
+void addition(CONST BigNum* num1, CONST BigNum* num2, BigNum* nRes);
 
-void subtraction(CONST BigNum* num1, CONST BigNum* num2, CONST BigNum* nRes);
+void subtraction(CONST BigNum* num1, CONST BigNum* num2, BigNum* nRes);
 
-void multiplication(CONST BigNum* num1, CONST BigNum* num2, CONST BigNum* nRes);
+void multiplication(CONST BigNum* num1, CONST BigNum* num2, BigNum* nRes);
 
-void division(CONST BigNum* num1, CONST BigNum* num2, CONST BigNum* nRes);
+void division(CONST BigNum* num1, CONST BigNum* num2, BigNum* nRes);
 

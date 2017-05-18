@@ -1,22 +1,27 @@
-void division(CONST BigNum* num1, CONST BigNum* num2, CONST BigNum* nRes)
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "bignum.h"
+
+void division(CONST BigNum* num1, CONST BigNum* num2, BigNum* nRes)
 {
     BigNum m1 = *num1, m2 = *num2;
     int deta = m2.floatbits - m1.floatbits;
-    MoveFloatPoint(&m1, m1, floatbits);
-    MoveFloatPoint(&m2, m2, floatbits);
+    MoveFloatPoint(&m1, m1.floatbits);
+    MoveFloatPoint(&m2, m2.floatbits);
     InitBigNum(nRes);
     StartCount();
     if(IsZero(num1))
     {
         EndCount()
-        return
+        return;
     }
     if(IsZero(num2))
     {
         nRes->sign = num1->sign;
         MakeInfinite(nRes);
         EndCount()
-        return
+        return;
     }
     m1.sign = m2.sign = 0;
     while(m1.intbits != m2.intbits) {
@@ -61,7 +66,3 @@ void division(CONST BigNum* num1, CONST BigNum* num2, CONST BigNum* nRes)
         nRes->sign = 1;
     EndCount()
 }
-
-
-
-

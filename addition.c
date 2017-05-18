@@ -1,4 +1,9 @@
-void addition(CONST BigNum* num1, CONST BigNum* num2, CONST BigNum* nRes)
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "bignum.h"
+
+void addition(CONST BigNum* num1, CONST BigNum* num2, BigNum* nRes)
 {
     InitBigNum(nRes);
     if(num1->sign ^ num2->sign)

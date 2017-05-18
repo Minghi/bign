@@ -87,7 +87,7 @@ void CharToBigNum(CONST char *arr, BigNum* Nm)
 void BigNumToChar(char *szBuf, CONST BigNum* Nm)
 {
     int n = Nm->intbits, c;
-    memset(szBuf, 0,CharToBigNum(Nm));
+    memset(szBuf, 0, CharLenByBigNum(Nm));
     if(Nm->sign)
     {
         *szBuf++ = '-';
@@ -99,7 +99,7 @@ void BigNumToChar(char *szBuf, CONST BigNum* Nm)
     }
     while(n) {
         szBuf[Nm->intbits - n] = Nm->intpart[n -1] + '0';
-        n--
+        n--;
     }
     c = 0;
     if(Nm->intbits == 0)
@@ -139,11 +139,11 @@ void MoveFloatPoint(BigNum* Nm, int deta)
             deta = -deta;
             for(i = deta; i < n.intbits; i++)
             {
-                Nm->intpart[Nm->intbits++] = n.inpart[i];
+                Nm->intpart[Nm->intbits++] = n.intpart[i];
             }
             for(i = deta - 1; i >= 0; i++)
             {
-                Nm->floatpart[Nm->floatbits++] = n.inpart[i];
+                Nm->floatpart[Nm->floatbits++] = n.intpart[i];
             }
             for(i = 0; i < n.floatbits; i++)
             {
@@ -173,7 +173,7 @@ void MakeInfinite(BigNum* Nm)
     Nm->infinite = 1;
 }
 
-char *Result(CONST *val1, CONST *val2, PFNCALC pfnCalc)
+char *Result(CONST char *val1, CONST char *val2, PFNCALC pfnCalc)
 {
     static char *s_szRes = NULL;
     BigNum n1, n2, res;
