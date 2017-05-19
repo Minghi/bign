@@ -141,7 +141,7 @@ void MoveFloatPoint(BigNum* Nm, int deta)
             {
                 Nm->intpart[Nm->intbits++] = n.intpart[i];
             }
-            for(i = deta - 1; i >= 0; i++)
+            for(i = deta - 1; i >= 0; i--)
             {
                 Nm->floatpart[Nm->floatbits++] = n.intpart[i];
             }
