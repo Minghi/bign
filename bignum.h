@@ -25,11 +25,11 @@ typedef struct tagBigNum {
     char floatpart[FLOAT_BIT_MAX];
 } BigNum;
 
-typedef void (*PFNCALC)(CONST BigNum* num1, CONST BigNum* num2, CONST BigNum* nRes);
+typedef void (*PFNCALC)(CONST BigNum* num1, CONST BigNum* num2, BigNum* nRes);
 
 void StartCount();
 
-void EndCount()
+void EndCount();
 
 float Time();
 
