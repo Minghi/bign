@@ -11,7 +11,7 @@ void multiplication(CONST BigNum* num1, CONST BigNum* num2, BigNum* nRes)
     InitBigNum(nRes);
     MoveFloatPoint(&m1, m1.floatbits);
     MoveFloatPoint(&m2, m2.floatbits);
-    StartCount();
+  //  StartCount();
     for(i = 0; i < m2.intbits; i++)
     {
         BigNum tmp = {0};
@@ -36,5 +36,5 @@ void multiplication(CONST BigNum* num1, CONST BigNum* num2, BigNum* nRes)
 
     if(num1->sign ^ num2->sign)
         nRes->sign = 1;
-    EndCount()
+  //  EndCount();
 }

@@ -15,7 +15,7 @@ void addition(CONST BigNum* num1, CONST BigNum* num2, BigNum* nRes)
         int maxfloatbits = num1->floatbits > num2->floatbits ? num1->floatbits : num2->floatbits;
         int addbit = 0;
         int i, j;
-        StartCount();
+      //  StartCount();
         for(i = maxfloatbits - 1; i >= 0; i--)
         {
             int value = num1->floatpart[i] + num2->floatpart[i] + addbit;
@@ -39,5 +39,5 @@ void addition(CONST BigNum* num1, CONST BigNum* num2, BigNum* nRes)
         nRes->sign = num1->sign;
         AdjustBits(nRes);
     }
-    EndCount()
+  //  EndCount();
 }

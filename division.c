@@ -10,17 +10,17 @@ void division(CONST BigNum* num1, CONST BigNum* num2, BigNum* nRes)
     MoveFloatPoint(&m1, m1.floatbits);
     MoveFloatPoint(&m2, m2.floatbits);
     InitBigNum(nRes);
-    StartCount();
+  //  StartCount();
     if(IsZero(num1))
     {
-        EndCount()
+      //  EndCount();
         return;
     }
     if(IsZero(num2))
     {
         nRes->sign = num1->sign;
         MakeInfinite(nRes);
-        EndCount()
+      //  EndCount();
         return;
     }
     m1.sign = m2.sign = 0;
@@ -64,5 +64,5 @@ void division(CONST BigNum* num1, CONST BigNum* num2, BigNum* nRes)
     MoveFloatPoint(nRes, deta);
     if(num1->sign ^ num2->sign)
         nRes->sign = 1;
-    EndCount()
+  //  EndCount();
 }

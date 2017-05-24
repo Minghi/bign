@@ -15,11 +15,11 @@ void subtraction(CONST BigNum* num1, CONST BigNum* num2, BigNum* nRes)
         int cmp = compare(num1, num2);
         int swapflag, i, maxfloatbits, subtractbit;
 
-        StartCount();
+      //  StartCount();
 
         if(!cmp)
         {
-            EndCount()
+          //  EndCount();
             return;
         }
         swapflag = num1->sign == 0 ? cmp == -1 : cmp == 1;
@@ -64,5 +64,5 @@ void subtraction(CONST BigNum* num1, CONST BigNum* num2, BigNum* nRes)
         nRes->sign = swapflag ? !num1->sign : num1->sign;
         AdjustBits(nRes);
     }
-    EndCount()
+  //  EndCount();
 }
